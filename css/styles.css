@@ -1,0 +1,104 @@
+/*
+Author:  Rob Lindauer
+Date:  2026-02-24
+Filename:  styles.css
+*/
+
+/* CSS Reset - the purpose of the CSS reset is to reduce inconsistencies among browsers in displaying the webpage, e.g., inconsistencies in display of default line heights, margins, font sizes of headings, etc. */
+
+body, header, nav, main, footer, img, h1, h3 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	}
+	
+/* Style rules for body ( ) and images (to support responsive images) */
+	
+img {
+	max-width: 100%;
+	display: block;
+	}
+	
+.centered-image {
+	margin: auto;	
+	}
+	
+	
+/* Style roles for header ---------------------------------------------------------------------------- */
+
+header {
+	margin: 2em 0;
+	}
+	
+header h1 {
+	text-align: center;
+	}
+	
+header h3 {
+	text-align: center;
+	}
+
+	
+/* Style rules for nav ------------------------------------------------------------------------------- */
+
+nav {
+	background-color: black;
+	}
+	
+nav ul {
+	list-style-type: none; /* remove bullet markers */
+	margin: 0;
+	text-align: center;
+	}
+	
+nav li {
+	display: inline-block;
+	font-size: 1em;
+	font-family: Geneva, Arial, sans-serif; /* font family for list items */
+	font-weight: bold;
+	}
+	
+nav li a {
+	display: block;
+	color: #f6eee4;
+	padding: 0.5em 2em;
+	text-decoration: none; /* no underline for links in nav item list */
+	}
+	
+/* Style rules for main -------------------------------------------------------------------- */
+
+main {
+	background-color: #fff; /* white background for max color contrast */
+	padding: 2%;
+	font-family: Verdana, Arial, sans-serif; /* font family for main */
+	}
+
+.link { /* example of class selector.  Could we also/alternatively define a rule for <a... >? */
+	color: #4d3319;
+	text-decoration: none; /* no underline for links */
+	font-weight: bold;
+	font-style: italic;
+	}
+
+#contact { /* example of id selector */
+	text-align: center;
+	}
+	
+.centered-para {
+	text-align: center;
+	}
+	
+
+/* Style rules for footer ---------------------------------------------------------------------- */
+
+footer {
+	text-align: center;
+	color: black;
+	padding: 1% 0%;
+	}
+	
+footer a {
+	color: black;
+	text-decoration: none;
+	}
+	

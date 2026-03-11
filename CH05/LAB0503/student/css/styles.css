@@ -1,0 +1,145 @@
+/*
+Purpose:  Style sheet for Ch5 Lab3
+Author:  Rob Lindauer
+Date:  2026-03-08
+Filename:  styles.css
+*/
+
+/* CSS Reset - the purpose of the CSS reset is to reduce inconsistencies among browsers in displaying the webpage, e.g., inconsistencies in display of default line heights, margins, font sizes of headings, etc. */
+
+body, header, nav, main, footer, img, h1, h3, ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	}
+	
+/* Style rules for body ( ) and images (to support responsive images) */
+	
+img {
+	max-width: 100%;
+	display: block;
+	border-radius:  8px;
+	}
+	
+.centered-image {
+	margin: auto;
+	border-radius:  8px;	
+	}
+	
+/* Style rules for mobile viewport */
+
+.mobile {
+	display: block;
+	}
+	
+.mobile h1 {
+	padding: 2%;
+	text-align: center;
+	font-family: "Emblema One", system-ui;
+	font-weight: 400;
+	font-style: normal;
+	}
+	
+.mobile h3 {
+	padding: 2%;
+	text-align: center;
+	font-family: "Lora", serif;
+	/* font-optical-sizing: auto; ← from Google Fonts but invalid per CSS validator */
+	font-weight: 400;
+	font-style: normal;
+	}
+
+/* Hide tab-desk (tablet-desktop) class */
+
+.tab-desk {
+	display: none;
+	}
+	
+/* Style rules for header area ------------------------------------------------------ */
+
+.mobile h1 {
+	padding: 2%;
+	text-align: center;
+	font-family: "Emblema One", system-ui;
+	font-weight: 400;
+	font-style: normal;
+	}
+	
+.mobile h3 {
+	padding: 2%;
+	text-align: center;
+	font-family: "Lora", serif;
+	/* font-optical-sizing: auto; ← from Google Fonts but invalid per CSS validator */
+	font-weight: 400;
+	font-style: normal;
+	}
+	
+/* Style rules for navigation area -------------------------------------------------- */
+
+nav {
+	background-color: #2a1f14;
+	}
+	
+nav ul {
+	list-style-type: none;
+	text-align: center;
+	}
+	
+nav li {
+	/* display: block; */ /* why needed? */
+	border-top-style: solid;
+	border-top-color: #f6eee4;
+	border-top-width: 0.5px;
+	font-size: 1.5em;
+	font-family: Geneva, Arial, sans-serif; /* Should this font-family be removed, given that we have now included the Google Fonts definition? */
+	font-weight: bold;
+	border-radius:  8px;
+	}
+	
+nav li:first-child {
+	border-top: none
+}
+	
+nav li a {
+	display: block;
+	color: #f6eee4;
+	padding: 0.5em 2em;
+	text-decoration: none;
+	}
+	
+/* Style rules for main -------------------------------------------------------------------- */
+
+main {
+	background-color: #fff; /* white background for max color contrast */
+	padding: 2%;
+	font-family: Verdana, Arial, sans-serif; /* font family for main */
+	}
+
+.link { /* example of class selector.  Could we also/alternatively define a rule for <a... >? */
+	color: #4d3319;
+	text-decoration: none; /* no underline for links */
+	font-weight: bold;
+	font-style: italic;
+	}
+
+#contact { /* example of id selector */
+	text-align: center;
+	}
+	
+.centered-para {
+	text-align: center;
+	}	
+
+/* Style rules for footer ---------------------------------------------------------------------- */
+
+footer {
+	text-align: center;
+	color: black;
+	padding: 1% 0%;
+	}
+	
+footer a {
+	color: black;
+	text-decoration: none;
+	}
+	

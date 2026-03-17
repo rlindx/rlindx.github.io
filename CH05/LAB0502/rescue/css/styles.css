@@ -1,0 +1,159 @@
+/*
+Purpose:  Style sheet for Ch 5 Lab 2
+Author:  Rob Lindauer
+Date:  2026-03-08
+Filename:  styles.css
+*/
+
+/* CSS Reset */
+
+body, header, nav, main, footer, img, h1, h3, ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	}
+	
+/* Style rules for body and images */
+
+body {
+	background-color: #f6eee4;
+	}
+	
+img {
+	max-width: 100%;
+	display: block;
+	margin: auto; /* I added this on my own - think images look better centered */
+	}
+	
+/* Style rules for mobile viewport */
+
+.mobile {
+	display: block;
+	}
+
+/* Hide tab-desk (tablet-desktop) class */
+
+.tab-desk {
+	display: none;
+	}
+	
+/* Style rules for header area */
+
+.mobile h1 {
+	padding: 2%;
+	text-align: center;
+	font-family: "Emblema One", system-ui;
+	font-weight: 400;
+	font-style: normal;
+	}
+	
+.mobile h3 {
+	padding: 2%;
+	text-align: center;
+	font-family: "Lora", serif;
+	/* font-optical-sizing: auto; ← from Google Fonts but invalid per CSS validator */
+	font-weight: 400;
+	font-style: normal;
+	}
+	
+/* Style rules for navigation area */
+
+nav {
+	background-color: #2a1f14;
+	}
+	
+nav ul {
+	list-style-type: none;
+	text-align: center;
+	}
+	
+nav li {
+	display: block;
+	border-top-style: solid;
+	border-top-color: #f6eee4;
+	border-top-width: 0.5px;
+	font-size: 1.5em;
+	font-family: Geneva, Arial, sans-serif; /* Should this be removed for Ch5 Lab2? */
+	font-weight: bold;
+	}
+	
+nav li a {
+	display: block;
+	color: #f6eee4;
+	padding: 0.5em 2em;
+	text-decoration: none;
+	}
+	
+/* Style rules for main content */
+
+main {
+	padding: 2%; /* removed in Ch 5 → font-family: Verdana, Arial, sans-serif; */
+	font-family: "Lora", serif;
+	/* font-optical-sizing: auto; ← from Google Fonts but invalid per CSS validator */
+	font-weight: 400;
+	font-style: normal;
+	}
+	
+main p {
+	font-size: 1.25em;
+	}
+	
+main h3 {
+	padding-top: 2%;
+	}
+	
+main ul {
+	list-style-type: square;
+	}
+	
+.link {
+	color: #4d3319;
+	text-decoration: none;
+	font-weight: bold;
+	font-style: italic;
+	}
+	
+.action {
+	font-size: 1.75em;
+	font-weight: bold;
+	text-align: center;
+	}
+	
+.round {
+	border-radius: 6px;
+	}
+	
+#info ul {
+	margin-left: 10%;
+	}
+	
+#contact {
+	text-align: center;
+	}
+	
+.tel-link {
+	background-color: #2a1f14;
+	padding: 2%;
+	width: 80%;
+	margin: 0 auto 0 auto;
+	}
+	
+.tel-link a {
+	color: #f6eee4;
+	text-decoration: none;
+	font-weight: bold;
+	}
+	
+/* Style rules for footer content */
+
+footer {
+	text-align: center;
+	color: #f6eee4;
+	padding: 1% 0%;
+	}
+	
+footer a {
+	color: #f3e6d8;
+	text-decoration: none;
+	}
+	

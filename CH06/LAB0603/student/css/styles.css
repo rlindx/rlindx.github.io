@@ -1,0 +1,350 @@
+/*
+
+Author:  Rob Lindauer
+Date:  2026-03-18
+Filename:  styles.css
+Purpose:  Style sheet for Ch6 Lab3
+
+*/
+
+/* Style rules for mobile viewport ========================================== */
+
+/* CSS Reset - reduce webpage display inconsistencies (e.g., in default line hights, margins, font sizes) among browsers */
+
+body,
+header,
+nav,
+main,
+footer,
+img,
+h1,
+h3,
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Display the mobile class.  Hide the tablet/desktop class */
+
+.mobile {
+  display: block;
+}
+
+.tab-desk {
+  display: none;
+}
+
+/* Style rules for entire page (all sections) */
+
+* {
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+h1 {
+  padding: 2%;
+  font-family: "Lora", "Times New Roman", serif;
+  /* font-optical-sizing: auto; ← from Google Fonts but invalid per CSS validator */
+  font-weight: 400;
+  font-style: normal;
+}
+
+h3 {
+  padding: 2%;
+  text-align: center;
+  font-family: "Lora", "Times New Roman", serif;
+  /* font-optical-sizing: auto; ← from Google Fonts but invalid per CSS validator */
+  font-weight: 400;
+  font-style: normal;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.email-link {
+  /* example of class selector.  Could we also/alternatively define a rule .a { ... }? */
+  color: #4d3319;
+  text-decoration: none; /* no underline for links */
+  font-weight: bold;
+  font-style: italic;
+  margin: 0 auto 0 auto;
+}
+
+.h1-cent {
+  padding: 2%;
+  text-align: center;
+  font-family: "Lora", "Times New Roman", serif;
+  /* font-optical-sizing: auto; ← from Google Fonts but invalid per CSS validator */
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+
+.img-cent {
+  margin: auto;
+  border-radius: 8px;
+}
+
+.mobile h1 {
+  padding: 2%;
+  text-align: center;
+  font-family: "Lora", "Times New Roman", serif;
+  /* font-optical-sizing: auto; ← from Google Fonts but invalid per CSS validator */
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mobile h1-cent {
+  padding: 2%;
+  text-align: center;
+  font-family: "Lora", "Times New Roman", serif;
+  /* font-optical-sizing: auto; ← from Google Fonts but invalid per CSS validator */
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mobile h3 {
+  padding: 2%;
+  text-align: center;
+  font-family: "Lora", "Times New Roman", serif;
+  /* font-optical-sizing: auto; ← from Google Fonts but invalid per CSS validator */
+  font-weight: 400;
+  font-style: normal;
+}
+
+.p-cent {
+  text-align: center;
+}
+
+.round {
+  border-radius: 8px;
+}
+
+.tel-link {
+  padding: 2%;
+  width: 80%;
+  margin: 0 auto 0 auto;
+}
+
+.ul-cent {
+  text-align: center;
+  list-style-position: inside;
+}
+
+#contact {
+  /* example of id selector */
+  text-align: center;
+}
+
+/* Style rules for the entire body */
+
+body {
+  background: linear-gradient(#fff, #00bfff);
+}
+
+/* Style rules for header area ------------------------------------------------------ */
+
+/* Style rules for navigation area -------------------------------------------------- */
+
+nav {
+  background-color: black;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+nav li {
+  display: block; /* Why is this needed? */
+  border-top-style: solid;
+  border-top-color: black;
+  border-top-width: 0.5px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+nav ul li:first-child {
+  border-top: none;
+}
+
+nav ul li a {
+  display: block;
+  color: #f6eee4;
+  padding: 0.5em 2em;
+  text-decoration: none;
+}
+
+/* Style rules for main area ------------------------------------------------ */
+
+main {
+  /* background-color: #fff; ... white background for max color contrast */
+  padding: 2%;
+}
+
+/* Style rules for footer --------------------------------------------------- */
+
+footer {
+  clear: left; /* added to revert to single column after multi-column display in the desktop viewports */
+  text-align: center;
+  color: black;
+  padding: 1% 0%;
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Media query for tablet viewport ========================================== */
+
+@media screen and (min-width: 620px), print {
+  /* Tablet viewport:  Show tab-desk class, hide mobile class */
+
+  .tab-desk {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  /* Tablet viewport:  Style rules for nav area */
+
+  nav li {
+    color: white;
+    display: inline-block;
+    font-size: 1.25em;
+    border-top: none;
+    margin: 0;
+  }
+
+  nav li a {
+    padding: 0.5em;
+  }
+
+  nav li a:hover {
+    color: #2a1f14;
+    background-color: #f6eee4;
+  }
+}
+
+/* Media query for desktop viewport ========================================= */
+
+@media screen and (min-width: 1280px) {
+  /* Desktop viewport:  Style rules for nav area */
+
+  nav {
+    background-color: black;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav li {
+    color: white;
+    display: inline-block;
+    border-top: none;
+    font-size: 1.25em;
+    margin: 0;
+  }
+
+  nav li a {
+    padding: 0.5em 1.5em;
+  }
+
+  nav li a:hover {
+    color: #2a1f14;
+    background-color: #f6eee4;
+  }
+
+  /* Desktop viewport:  Style rules for main content */
+
+  /* Desktop viewport:  Two-column layout for club and calendar listings */
+
+  #clubs {
+    float: left;
+    margin: 0 2%;
+  }
+
+  #calendar {
+    float: right;
+    margin: 0 2%;
+  }
+}
+
+/* Desktop viewport:  Style rules for footer */
+
+/* Media query for large desktop viewport ================================== */
+
+@media screen and (min-width: 1920px) {
+  body {
+    background: linear-gradient(#f6eee4, #78593a);
+  }
+
+  #wrapper {
+    width: 1920px;
+    margin: 0 auto;
+  }
+
+  main {
+    background-color: #f6eee4;
+  }
+
+  /* Large desktop viewport:  Style rules for nav area */
+
+  nav {
+    background-color: black;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav li {
+    color: white;
+    display: inline-block;
+    border-top: none;
+    font-size: 1.5em;
+    margin: 0;
+  }
+
+  nav li a {
+    padding: 0.5em 1.5em;
+  }
+
+  nav li a:hover {
+    color: #2a1f14;
+    background-color: #f6eee4;
+  }
+}
+
+/* Large desktop viewport:  Two-column layout for club and calendar listings */
+
+#clubs {
+  float: left;
+  margin: 0 0 0 10%;
+}
+
+#calendar {
+  float: right;
+  margin: 0 10% 0 0;
+}
+
+/* Media query for print ==================================================== */
+
+@media print {
+  body {
+    background-color: #fff;
+    color: #000;
+  }
+}

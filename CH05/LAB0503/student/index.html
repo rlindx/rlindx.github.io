@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<!--
+		Group members:  Rob Lindauer
+		Filename:  index.html
+		Date:  2026-03-16
+	-->
+
+<head>
+
+	<title>CCSU Student Clubs</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+</head>
+
+	<!-- The purpose of this webpage is to provide visitors with a scrollable list of student clubs.  The user can select a club and hyperlink to an info page about the student club.  Some links will be absolute links (where the student club has its own webpage elsewhere), and others will be relative links (where we maintain the club info on a page within this website). -->
+
+<body>
+	
+	<header>
+		
+		<!-- Need to decide what content to have in header for mobile vs tablet/desktop -->
+	
+		<div class="tab-desk">
+			<h1>CCSU Student Clubs</h1>
+			<h3>Make the Most of Your Life at CCSU!</h3>
+		</div>
+		
+		<div class="mobile">
+			<h1>CCSU Student Clubs</h1>
+		</div>
+		
+	</header>
+		
+	<nav>
+		
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="clubsearch.html">Search for Clubs</a></li>
+			<li><a href="eventsearch.html">Search for Events</a></li>
+			<li><a href="calendar.html">Event Calendar</a></li>
+			<!-- <li><a href="clubmaint.html">Add / Update / Delete Clubs</a></li> ... removed for mobile viewport -->
+			<!-- <li><a href="eventmaint.html">Add / Update / Delete Events</a></li> ... removed for mobile viewport -->
+			<li><a href="contact.html">Contact Us</a></li>
+		</ul>		
+	
+	</nav>
+	
+	
+		
+	<main> <!-- Purpose:  Provide site visitors with a scrollable / seardhable list of student clubs.  On other pagess the main element will provide other functions, e.g., a calendar, function for authorized users to add / update / delete clubs, function for authorized users to add / update / delete events. -->
+		
+		<div id="hero">
+		
+			<img class="img-cent" src="images/student-group-sitting.jpg" alt="group of students sitting against a wall">
+		
+		</div>	
+			
+		<div id="welcome">
+			
+			<p class="p-cent">Welcome to the CCSU Student Clubs Website!
+		
+			<p class="p-cent">A scrollable list of clubs will eventually appear here.</p>
+			
+		</div>
+		
+	</main>
+		
+	<footer>
+		<p class="tel-link"><a href="tel:8885551212">(888)&nbsp;555-1212</a></p>
+		<p><a class="email-link" href="mailto:studentclubs@ccsu.edu">studentclubs@ccsu.edu</a></p>
+		<p class="tab-desk"><a href="http://www.ccsu.edu"><img class="centered-image" src="images/ccsu-logo.png" alt="CCSU Logo"></a></p>
+		<p class="mobile"><a href="http://www.ccsu.edu">www.ccsu.edu</a>
+	</footer>
+		
+</body>
+
+</html>

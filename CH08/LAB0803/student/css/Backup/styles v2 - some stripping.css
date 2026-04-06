@@ -1,0 +1,448 @@
+/*
+
+Author:  Rob Lindauer
+Date:  2026-03-30
+Filename:  styles.css
+Purpose:  Style sheet for Ch7 Lab3
+
+*/
+
+/* Style rules for mobile viewport ========================================== */
+
+/* CSS Reset - Purpose:  To reduce webpage display inconsistencies (e.g., in default line hights, margins, font sizes) among browsers */
+
+/* CSS Reset */
+
+body,
+header,
+nav,
+main,
+footer,
+img,
+h1,
+h3,
+ul,
+p,
+aside,
+figure,
+figcaption {
+   margin: 0;
+   padding: 0;
+   border: 0;
+}
+
+/* Display the mobile class.  Hide the tablet/desktop class */
+
+.mobile {
+  display: block;
+}
+
+.tab-desk {
+  display: none;
+}
+
+/* Universal style rules */
+
+* {
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+/* Style rules for element selectors */
+
+h1 {
+  padding: 2%;
+  font-family: "Lora", "Times New Roman", serif;
+  /* font-optical-sizing: auto; ← from Google Fonts but invalid per CSS validator */
+  font-weight: 400;
+  font-style: normal;
+}
+
+h3 {
+  padding: 2%;
+  text-align: center;
+  font-family: "Lora", "Times New Roman", serif;
+  /* font-optical-sizing: auto; ← from Google Fonts but invalid per CSS validator */
+  font-weight: 400;
+  font-style: normal;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+p {
+	margin:  0 0 0.5em 0;
+	padding: 0 0 0.5em 0;
+}
+
+aside {
+  width: 100%;
+  float: none;
+}
+
+figcaption {
+   padding: 2%;
+   border-top: 4px solid #2a1f14;
+}
+
+figure {
+   max-width: 400px;
+   margin: 2% auto;
+   border: 4px solid #2a1f14;
+   box-shadow: 6px 6px 10px #c5a687;
+}
+
+/* Style rules for class selectors */
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+.email-link {
+  color: #4d3319;
+  text-decoration: none; /* no underline for links */
+  font-weight: bold;
+  font-style: italic;
+  margin: 0 auto 0 auto;
+  padding: 0.5em;
+}
+
+/* Replaced by "centered" class style ....................
+.h1-cent {
+  padding: 2%;
+  text-align: center;
+  font-family: "Lora", "Times New Roman", serif;
+  /* font-optical-sizing: auto; ← from Google Fonts but invalid per CSS validator */
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+......................................................... */
+
+/* ............. replaced with "centered" class selector
+.img-cent {
+  margin: auto;
+  border-radius: 8px;
+}
+........................................................ */
+
+
+/* Remove .mobile h1 etc element selectors ................................
+
+.mobile h1 {
+  padding: 2%;
+  text-align: center;
+  font-family: "Lora", "Times New Roman", serif;
+  font-optical-sizing: auto; ← from Google Fonts but invalid per CSS validator ...
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mobile h1-cent {
+  padding: 2%;
+  text-align: center;
+  font-family: "Lora", "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mobile h3 {
+  padding: 2%;
+  text-align: center;
+  font-family: "Lora", "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.......................................... */
+
+/* Replaced by ".centered" class selector ..................
+.p-cent {
+  text-align: center;
+}
+......................... end of removed section */
+
+.round {
+  border-radius: 8px;
+}
+
+.tel-link {
+  padding: 0.5em;
+  width: 80%;
+  margin: 0 auto 0 auto;
+}
+
+.ul-cent {
+  text-align: center;
+  list-style-position: inside;
+}
+
+/* Style rules for ID selectors */
+
+#contact {
+  /* example of id selector */
+  text-align: center;
+}
+
+/* Style rules for body area */
+
+body {
+  background: linear-gradient(#fff, #00bfff);
+}
+
+/* Style rules for header area ------------------------------------------------------ */
+
+
+
+/* Style rules for navigation area -------------------------------------------------- */
+
+nav {
+  background-color: black;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+nav li {
+  display: block; /* Why is this needed? */
+  border-top-style: solid;
+  border-top-color: black;
+  border-top-width: 0.5px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* drop for now ..........................
+nav ul li:first-child {
+  border-top: none;
+}
+......................................... */
+
+nav ul li a {
+  display: block;
+  color: #f6eee4;
+  padding: 0.5em 2em;
+  text-decoration: none;
+}
+
+/* Style rules for main area ------------------------------------------------ */
+
+main {
+  /* background-color: #fff; ... white background for max color contrast */
+  padding: 2%;
+}
+
+/* Style rules for footer --------------------------------------------------- */
+
+footer {
+  clear: left; /* added to revert to single column after multi-column display in the desktop viewports */
+  text-align: center;
+  color: black;
+  padding: 1% 0%;
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+}
+
+/* ========================================================================== */
+/* Media queries                                                              */
+/*                                                                            */
+/* I have set up the queries to be mutually exclusive - no more than one will */
+/* apply at a time                                                            */
+/* ========================================================================== */
+
+/* ========================================================================== */
+/* Media query for tablet viewport                                            */
+/*                                                                            */
+/* Major content:  Use two column display, use inline list item type          */
+/* ========================================================================== */
+
+@media screen and (min-width: 620px) and (max-width: 1279px) {
+	
+  /* Tablet viewport:  Show tab-desk class, hide mobile class */
+
+  .tab-desk {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+  
+  /* Style rules for element selectors */
+  
+  aside {
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+
+
+}
+  
+  /* Style rules for body */
+
+/*.......................................................................
+body {
+  background: linear-gradient(#fff, #00bfff);
+}
+........................................................................*/
+
+
+
+  /* Tablet viewport:  Style rules for nav area */ 
+  
+nav li {
+	display: inline-block;
+	}
+
+/* Drop for now ........................
+
+nav li {
+    color: white;
+    display: inline-block;
+    font-size: 1.25em;
+    border-top: none;
+    margin: 0;
+  }
+
+  nav li a {
+    padding: 0.5em;
+  }
+
+  nav li a:hover {
+    color: #2a1f14;
+    background-color: #f6eee4;
+  }
+  
+ ....................................... */ 
+  
+} /* End of tablet viewport */
+
+/* ========================================================================== */
+/* Media query for desktop viewport                                            */
+/*                                                                            */
+/* Major content:  Use three column display, use inline list item type          */
+/* ========================================================================== */
+
+@media screen and (min-width: 1280px) {
+	
+/* Desktop viewport:  Show tab-desk class, hide mobile class */
+
+  .tab-desk {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+  
+   /* Style rules for element selectors */
+  
+  aside {
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: right;
+  font-style: italic;
+ 
+}
+  
+  
+   /* Style rules for body */
+
+/*..................................................................
+body {
+  background: linear-gradient(#fff, #00bfff);
+}
+...................................................................*/
+	
+  /* Desktop viewport:  Style rules for entire webpage (not a particular section) */
+ 
+
+
+  /* Desktop viewport:  Two-column layout for club and calendar listings */
+
+  #clubs {
+    float: left;
+    margin: 0 2%;
+  }
+
+  #calendar {
+    float: right;
+    margin: 0 2%;
+  }
+
+  /* Desktop viewport:  Style rules for nav area */
+  
+nav li {
+	display: inline-block;
+	}
+	
+/* Drop for now .....................................
+  
+nav {
+    background-color: black;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav li {
+    color: white;
+    display: inline-block;
+    border-top: none;
+    font-size: 1.25em;
+    margin: 0;
+  }
+
+  nav li a {
+    padding: 0.5em 1.5em;
+  }
+
+  nav li a:hover {
+    color: #2a1f14;
+    background-color: #f6eee4;
+  }
+  
+..................................................... */
+
+  /* Desktop viewport:  Style rules for main content */
+  
+  
+
+
+
+
+  /* Desktop viewport:  Style rules for footer */
+
+
+} /* End of desktop viewport */
+
+
+
+/* ========================================================================== */
+/* Media query for print                                                      */
+/*                                                                            */
+/* Major content:  use black and white color scheme                           */
+/* ========================================================================== */
+
+@media print {
+  body {
+    background-color: #fff;
+    color: #000;
+  }
+}

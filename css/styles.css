@@ -131,6 +131,10 @@ figure {
   justify-content: center;
 }
 
+.left {
+	text-align: left;
+}
+
 .round {
   border-radius: 4px;
 }

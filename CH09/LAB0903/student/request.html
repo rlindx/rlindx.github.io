@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!--
+		Group members:  Rob Lindauer
+		Filename:  request.html
+		Date:  2026-04-24
+		Purpose:  Permits a user to request to request addition, change, or deletion of a club's or event's information
+	-->
+
+<head>
+
+    <title>CCSU Student Clubs - Request to Add, Change, or Delete a Club or Event</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/bluedevil-favicon-32x32.png">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1 class="centered">Add or Update Club / Event Info</h1>
+        <p class="tab-desk centered">Make the Most of Your Life at CCSU!</p>
+
+    </header>
+
+    <nav>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="spotlight.html">Spotlight</a></li>
+            <li><a href="clubinfo.html">Student Clubs</a></li>
+            <li><a href="eventinfo.html">Event Calendar</a></li>
+            <li><a href="request.html">Add a Club or Event</a>
+                <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+    </nav>
+
+
+
+    <main>
+
+        <div id="hero" class="tab-desk">
+
+            <img class="centered" src="images/student-group-sitting.jpg" alt="group of students sitting against a wall">
+
+        </div>
+
+        <h2 class="centered" style="padding: 0.5em; margin: 1em; background: black; color: white;">Add, Change, or Delete an Club</h2>
+
+        <div class="grid">
+
+            <form class="form-grid">
+
+                <fieldset>
+
+                    <legend>What kind of change do you wish to make?</legend>
+
+                    <label for="cAdd">
+                        <input type="radio" name="info" id="cAdd" value="Add Club">Add a Club</label>
+
+                    <label for="cUpdate">
+                        <input type="radio" name="info" id="cUpdate" value="Update Club">Update Info for an Existing Club</label>
+
+                    <label for="cDelete">
+                        <input type="radio" name="info" id="cDelete" value="Delete Club">Delete an Existing Club</label>
+
+                </fieldset>
+
+                <fieldset>
+
+                    <legend>Please provide the details</legend>
+
+                    <label for="cName">Club Name:</label>
+                    <input type="text" id="cName" name="cName">
+
+                    <label for="cType">Club Type:</label>
+                    <input type="text" id="cType" name="cType">
+
+                    <label for="cContact">Contact Person Name:</label>
+                    <input type="text" id="cContact" name="cType">
+
+                    <label for="cContactEmail">Contact Person Email:</label>
+                    <input type="email" id="cContactEmail" name="cContactEmail">
+
+                    <label for="cContactPhone">Contact Person Phone:</label>
+                    <input type="tel" id="cContactPhone" name="cContactPhone">
+
+                    <label for="cDesc">For new club additions (or existing club updates), please describe the club (or what's to be updated)</label>
+
+                    <br>
+
+                    <textarea id="cDesc" name="eDesc" rows="5" cols="70"></textarea>
+
+                </fieldset>
+
+                <input type="submit" id="submit" value="Submit Club" class="btn">
+
+            </form>
+
+        </div>
+
+        <h2 class="centered" style="padding: 0.5em; margin: 1em; background: black; color: white;">Add, Change, or Delete an Event</h2>
+
+        <div class="grid">
+
+            <form class="form-grid">
+
+                <fieldset>
+
+                    <legend>What kind of change do you wish to make?</legend>
+
+                    <label for="eAdd">
+                        <input type="radio" name="info" id="eAdd" value="Add Event">Add an Event</label>
+
+                    <label for="eUpdate">
+                        <input type="radio" name="info" id="eUpdate" value="Update Event">Update an Existing Event</label>
+
+                    <label for="eDelete">
+                        <input type="radio" name="info" id="eDelete" value="Delete Event">Delete an Existing Event</label>
+
+                </fieldset>
+
+                <fieldset>
+
+                    <legend>Please provide the details</legend>
+
+                    <label for="eName">Event Name:</label>
+                    <input type="text" id="eName" name="eName">
+
+                    <label for="eDate">Event Date:</label>
+                    <input type="date" id="eDate" name="eDate">
+
+                    <label for="eType">Event Type:</label>
+                    <input type="text" id="eType" name="eType">
+
+                    <label for="eContact">Contact Person Name:</label>
+                    <input type="text" id="eContact" name="eType">
+
+                    <label for="eContactEmail">Contact Person Email:</label>
+                    <input type="email" id="eContactEmail" name="eContactEmail">
+
+                    <label for="eContactPhone">Contact Person Phone:</label>
+                    <input type="tel" id="eContactPhone" name="eContactPhone">
+
+                    <label for="eDesc">For new event additions (or existing event updates), please describe the event (or what's to be updated)</label>
+
+                    <br>
+
+                    <textarea id="eDesc" name="eDesc" rows="5" cols="70"></textarea>
+
+                </fieldset>
+
+                <input type="submit" id="submit2" value="Submit Event" class="btn">
+
+            </form>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <p class="tel-link"><a href="tel:8885551212">(888)&nbsp;555-1212</a></p>
+        <p><a class="email-link" href="mailto:studentclubs@ccsu.edu">studentclubs@ccsu.edu</a></p>
+        <p class="tab-desk">
+            <a href="http://www.ccsu.edu"><img class="centered" src="images/ccsu-logo.png" alt="CCSU Logo"></a>
+        </p>
+        <p class="mobile"><a href="http://www.ccsu.edu">www.ccsu.edu</a>
+    </footer>
+
+
+</body>
+
+</html>

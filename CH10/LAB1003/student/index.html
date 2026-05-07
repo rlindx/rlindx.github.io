@@ -78,15 +78,38 @@
             <h2 class="centered">Welcome to the CCSU Student Clubs Website!</h2>
 
         </div>
+		
+		<!-- Display a countdown-to-the-weekend message -->
 
         <div id="weekend">
 
-            <p class="centered" id="enjoy">
-                <p>
+            <h3 class="centered" id="enjoy">Weekend message will go here<h3>
 
         </div>
 
+		<script>
 
+			var today = new Date().getDay(); /* Sunday=0, Saturday=6 */
+
+				if (today == 0) {
+
+					document.getElementById("enjoy").innerText = "Happy Sunday!";
+
+				} else if (today == 5) {
+					document.getElementById("enjoy").innerText = "The weekend is almost here!";
+
+				} else if (today == 6) {
+
+					document.getElementById("enjoy").innerText = "Happy Saturday!";
+
+				} else {
+					var daysleft = (6 - today);
+					var enjoymsg = "There are " + daysleft + " workdays till the weekend!";
+
+					document.getElementById("enjoy").innerText = enjoymsg;
+				}
+
+		</script>        			
 
         <!-- The main body of the page is a scrollable list of student clubs plus a calendar of club events - displayed either in a column on small viewports or as a two-column grid on larger viewports -->
 
@@ -191,7 +214,7 @@
         <p class="mobile"><a href="http://www.ccsu.edu">www.ccsu.edu</a>
     </footer>
 
-    <script src="scripts/script.js"></script>
+
 
     <script>
         const today = new Date().getDay(); /* Sunday=0, Saturday=6 */
@@ -212,7 +235,7 @@
         		}
     </script>
 
-
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>

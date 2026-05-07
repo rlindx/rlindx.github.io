@@ -1,9 +1,9 @@
 /*
 
 Author:  Rob Lindauer
-Date:  2026-04-01
+Date:  2026-05-07
 Filename:  styles.css
-Purpose:  Style sheet for Rob's semester project
+Purpose:  Style sheet for index to Rob's semester project
 
 */
 
@@ -132,7 +132,7 @@ figure {
 }
 
 .left {
-	text-align: left;
+  text-align: left;
 }
 
 .round {
@@ -187,14 +187,14 @@ nav ul li a {
   text-decoration: none;
 }
 
-/* Style rules for main area ------------------------------------------------ */
+/* Style rules for main area */
 
 main {
   /* background-color: #fff; ... white background for max color contrast */
   padding: 2%;
 }
 
-/* Style rules for footer --------------------------------------------------- */
+/* Style rules for footer */
 
 footer {
   clear: left; /* added to revert to single column after multi-column display in the desktop viewports */
@@ -243,20 +243,23 @@ tr:nth-child(odd) {
   background-color: lightgray;
 }
 
-/* ========================================================================== */
-/* Media queries                                                              */
-/*                                                                            */
-/* I have set up the queries to be mutually exclusive - no more than one will */
-/* apply at a time                                                            */
-/* ========================================================================== */
+/* Style rules for clock */
+
+#clock {
+  color: black;
+  padding: 20px 40px;
+  border-radius: 10px;
+  font-size: 2.5em;
+  text-align: center;
+  width: fit-content;
+  margin: 50px auto;
+}
 
 /* ========================================================================== */
 /* Media query for tablet viewport                                            */
-/*                                                                            */
-/* Major content:  Use two column display, use inline list item type          */
 /* ========================================================================== */
 
-@media screen and (min-width: 620px) and (max-width: 1279px) {
+@media screen and (min-width: 620px) {
   /* Tablet viewport:  Show tab-desk class, hide mobile class */
 
   .tab-desk {
@@ -267,24 +270,22 @@ tr:nth-child(odd) {
     display: none;
   }
 
-  /* Style rules for element selectors */
+  /* Tablet viewport:  Style rules for element selectors */
 
   aside {
     padding: 2%;
     margin: 2%;
   }
 
-  /* Tablet viewport:  Style rules for class selectors */
+  /* Tablet viewport:  Style rules for header */
 
   .grid {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 33% 33% 33%;
     grid-gap: 10px;
     align-items: center;
     justify-content: center;
   }
-
-  /* Tablet viewport:  Style rules for body */
 
   /* Tablet viewport:  Style rules for nav area */
 
@@ -294,9 +295,7 @@ tr:nth-child(odd) {
 } /* End of tablet viewport */
 
 /* ========================================================================== */
-/* Media query for desktop viewport                                            */
-/*                                                                            */
-/* Major content:  Use three column display, use inline list item type          */
+/* Media query for desktop viewport                                           */
 /* ========================================================================== */
 
 @media screen and (min-width: 1280px) {
@@ -320,18 +319,6 @@ tr:nth-child(odd) {
     font-style: italic;
   }
 
-  /* Desktop viewport:  Style rules for class selectors */
-
-  .grid {
-    /* for the desktop, make the first column twice as wide */
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-column: 1 / span 2;
-    grid-gap: 10px;
-    align-items: center;
-    justify-content: center;
-  }
-
   /* Desktop viewport:  Style rules for body */
 
   /* Desktop viewport:  Style rules for entire webpage (not a particular section) */
@@ -345,17 +332,12 @@ tr:nth-child(odd) {
   /* Desktop viewport:  Style rules for main content */
 
   /* Desktop viewport:  Style rules for footer */
-  
-   /* Desktop viewport:  Style rules for tables */
+
+  /* Desktop viewport:  Style rules for tables */
 
   table {
     width: 70%;
   }
-  
-  
-  
-  
-  
 } /* End of desktop viewport */
 
 /* ========================================================================== */

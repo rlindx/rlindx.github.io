@@ -5,8 +5,8 @@
 <!--
 		Group members:  Rob Lindauer
 		Filename:  index.html
-		Date:  2026-05-04
-		Purpose:  To proivde a directory of Rob Lindauer's CS110 work
+		Date:  2026-05-07
+		Purpose:  Provides a directory of Rob Lindauer's CS110 work
 	-->
 
 <head>
@@ -15,7 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 
 
 <body>
@@ -28,245 +27,320 @@
 
     <nav>
 
-        <!-- No nav content yet -->
+        <!-- No nav content -->
 
     </nav>
 
     <main>
+	
+		<!-- This section displays a digital clock, Rob's profile photo, and a "time left" message.  These items display in a column on the mobile viewport, and as a grid on the tablet and desktop viewports. -->
 
-        <div id="robswork">
+        <div class="grid">
 
-            <img class="centered" src="images/RL_Headshot.jpg" alt="Rob Lindauer profile picture">
+            <!-- Part 1:  a digital clock -->
+            <figure id="clock">00:00:00</figure>
 
-            <br>
-
-            <!-- For mobile device, display content as a list -->
-
-            <div class="mobile">
-
-                <h2>Chapter 01</h2>
-                <ul>
-                    <li><a href="CH01/LAB0101/plan.html">Lab 01</a></li>
-                    <li><a href="CH01/LAB0102/rescuepages.html">Lab 02</a></li>
-                    <li><a href="CH01/LAB0103/planning.pdf">Lab 03</a></li>
-                </ul>
-
-                <h2>Chapter 02</h2>
-                <ul>
-                    <li><a href="CH02/LAB0201/music/index.html">Lab 01</a></li>
-                    <li><a href="CH02/LAB0202/rescue/index.html">Lab 02</a></li>
-                    <li><a href="CH02/LAB0203/student/index.html">Lab 03</a></li>
-                </ul>
-
-                <h2>Chapter 03</h2>
-                <ul>
-                    <li><a href="CH03/LAB0301/music/index.html">Lab 01</a></li>
-                    <li><a href="CH03/LAB0302/rescue/index.html">Lab 02</a></li>
-                    <li><a href="CH03/LAB0303/student/index.html">Lab 03</a></li>
-                </ul>
-
-                <h2>Chapter 04</h2>
-                <ul>
-                    <li><a href="CH04/LAB0401/music/index.html">Lab 01</a></li>
-                    <li><a href="CH04/LAB0402/rescue/index.html">Lab 02</a></li>
-                    <li><a href="CH04/LAB0403/student/index.html">Lab 03</a></li>
-                </ul>
-
-                <h2>Chapter 05</h2>
-                <ul>
-                    <li><a href="CH05/LAB0501/music/index.html">Lab 01</a></li>
-                    <li><a href="CH05/LAB0502/rescue/index.html">Lab 02</a></li>
-                    <li><a href="CH05/LAB0503/student/index.html">Lab 03</a></li>
-                </ul>
-
-                <h2>Chapter 06</h2>
-                <ul>
-                    <li><a href="CH06/LAB0601/music/index.html">Lab 01</a></li>
-                    <li><a href="CH06/LAB0602/rescue/index.html">Lab 02</a></li>
-                    <li><a href="CH06/LAB0603/student/index.html">Lab 03</a></li>
-                </ul>
-
-                <h2>Chapter 07</h2>
-                <ul>
-                    <li><a href="CH07/LAB0701/music/index.html">Lab 01</a></li>
-                    <li><a href="CH07/LAB0702/rescue/index.html">Lab 02</a></li>
-                    <li><a href="CH07/LAB0703/student/index.html">Lab 03</a></li>
-                </ul>
-
-                <h2>Chapter 08</h2>
-                <ul>
-                    <li><a href="CH08/LAB0801/music/index.html">Lab 01</a></li>
-                    <li><a href="CH08/LAB0802/rescue/index.html">Lab 02</a></li>
-                    <li><a href="CH08/LAB0803/student/index.html">Lab 03</a></li>
-                </ul>
-
-                <h2>Chapter 09</h2>
-                <ul>
-                    <li><a href="CH09/LAB0901/music/index.html">Lab 01</a></li>
-                    <li><a href="CH09/LAB0902/rescue/index.html">Lab 02</a></li>
-                    <li><a href="CH09/LAB0903/student/index.html">Lab 03</a></li>
-                </ul>
-
-                <h2>Chapter 10</h2>
-                <ul>
-                    <li><a href="CH10/LAB1001/music/index.html">Lab 01</a></li>
-                    <li><a href="CH10/LAB1002/rescue/index.html">Lab 02</a></li>
-                    <li><a href="CH10/LAB1003/student/index.html">Lab 03</a></li>
-                </ul>
-
-                <h2>Chapter 11</h2>
-				<ul>
-                    <li><a href="CH11/LAB1101/music/index.html">Lab 01</a></li>
-                    <li><a href="CH11/LAB1102/rescue/index.html">Lab 02</a></li>
-                    <li><a href="CH11/LAB1103/student/index.html">Lab 03</a></li>
-                </ul>
-
+            <script>
+                // Function to update the clock every second
 				
-                <h2>Chapter 12</h2>
-				<ul>
-                    <li><a href="CH12/LAB1201/music/index.html">Lab 01</a></li>
-                    <li><a href="CH12/LAB1202/rescue/index.html">Lab 02</a></li>
-                    <li><a href="CH12/LAB1203/student/index.html">Lab 03</a></li>
-                </ul>
+					function updateClock() {
+						const now = new Date();
+				
+						// Get hours, minutes, seconds
+						let hours = now.getHours();
+						let minutes = now.getMinutes();
+						let seconds = now.getSeconds();
+				
+						// Format to always have two digits
+						hours = hours.toString().padStart(2, '0');
+						minutes = minutes.toString().padStart(2, '0');
+						seconds = seconds.toString().padStart(2, '0');
+				
+						// Display in HH:MM:SS format
+						document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+					}
+				
+					// Initial call to display clock immediately
+					
+					updateClock();
+				
+					// Update every second
+					
+					setInterval(updateClock, 1000);
+					
+            </script>
 
 
+            <!-- Part 2:  Rob's photo -->
+            <figure id="headshot">
+
+                <img class="centered" src="images/RL_Headshot.jpg" alt="Rob Lindauer profile picture">
+
+            </figure>
 
 
-            </div>
+            <!-- Part 3:  Countdown to assignment due date -->
+            <figure id="tempusfugit">
 
-            <!-- For tablets and desktops, display content as a table -->
+                <p class="centered" style="font-size: 2em;">Tempus Fugit</p>
 
-            <div class="tab-desk">
+                <p class="centered" id="timeleft">Time message will go here</p>
+				
+				<img class="centered" src="images/kermit_panic.gif" alt="Kermit panics">	
 
+                <script>
+				
+                    // Hard-code the due date
+					const targetDate = new Date("2026-05-13");
+					
+					// Determine today's date
+					const today = new Date();
+					
+					// Remove time portion for accurate day calculation
+					today.setHours(0, 0, 0, 0);
+					targetDate.setHours(0, 0, 0, 0);
+					
+					// Deterine the difference in milliseconds between the two dates
+					const diffMs = targetDate - today;
+					
+					// Convert the difference from milliseconds to days
+					const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+					
+					if (diffDays > 0) {
+						var timemsg = "We have only " + diffDays + " days left to finish the assigments.";                    
+					} else if (diffDays == 0) {
+						var timemsg = "Today is the drop-dead date to submit the assignments";
+								
+					} else {
+						var timemsg = "The due date has passed.  It's time to throw ourselves on the mercy of the Professor.";
+					}
+        
+					document.getElementById("timeleft").innerText = timemsg;
+					
+                </script>
 
-                <table>
-                    <!-- tabular format for tablet and desktop -->
+            </figure>
 
+        </div>
 
+        <p></p>
+        <br>
+        
+        <!-- For mobile device, display content as a list -->
 
-                    <tr>
-                        <th>Chapter</th>
-                        <th>Learning Objective</th>
-                        <th>Date Completed</th>
-                        <th>Lab 1</th>
-                        <th>Lab 2</th>
-                        <th>Lab 3</th>
-                    </tr>
+        <div class="mobile">
 
-                    <tr>
-                        <td>Chapter 01</td>
-                        <td class="left">Create a basic webpage</td>
-                        <td>2026-02-02</td>
-                        <td><a href="CH01/LAB0101/plan.html">LAB 0101</a></td>
-                        <td><a href="CH01/LAB0102/rescuepages.html">LAB 0102</a></td>
-                        <td><a href="CH01/LAB0103/planning.pdf">LAB 0103</a></td>
-                    </tr>
+            <h2>Chapter 01</h2>
+            <ul>
+                <li><a href="CH01/LAB0101/plan.html">Lab 01</a></li>
+                <li><a href="CH01/LAB0102/rescuepages.html">Lab 02</a></li>
+                <li><a href="CH01/LAB0103/planning.pdf">Lab 03</a></li>
+            </ul>
 
-                    <tr>
-                        <td>Chapter 02</td>
-                        <td class="left">Build a webpage template</td>
-                        <td>2026-02-09</td>
-                        <td><a href="CH02/LAB0201/music/index.html">LAB 0201</a></td>
-                        <td><a href="CH02/LAB0202/rescue/index.html">LAB 0202</a></td>
-                        <td><a href="CH02/LAB0203/student/index.html">LAB 0203</a></td>
-                    </tr>
+            <h2>Chapter 02</h2>
+            <ul>
+                <li><a href="CH02/LAB0201/music/index.html">Lab 01</a></li>
+                <li><a href="CH02/LAB0202/rescue/index.html">Lab 02</a></li>
+                <li><a href="CH02/LAB0203/student/index.html">Lab 03</a></li>
+            </ul>
 
-                    <tr>
-                        <td>Chapter 03</td>
-                        <td class="left">Enhance a website with images and links</td>
-                        <td>2026-02-18</td>
-                        <td><a href="CH03/LAB0301/music/index.html">LAB 0301</a></td>
-                        <td><a href="CH03/LAB0302/rescue/index.html">LAB 0302</a></td>
-                        <td><a href="CH03/LAB0303/student/index.html">LAB 0303</a></td>
-                    </tr>
+            <h2>Chapter 03</h2>
+            <ul>
+                <li><a href="CH03/LAB0301/music/index.html">Lab 01</a></li>
+                <li><a href="CH03/LAB0302/rescue/index.html">Lab 02</a></li>
+                <li><a href="CH03/LAB0303/student/index.html">Lab 03</a></li>
+            </ul>
 
-                    <tr>
-                        <td>Chapter 04</td>
-                        <td class="left">Design a webpage with a CSS style sheet</td>
-                        <td>2026-02-24</td>
-                        <td><a href="CH04/LAB0401/music/index.html">LAB 0401</a></td>
-                        <td><a href="CH04/LAB0402/rescue/index.html">LAB 0402</a></td>
-                        <td><a href="CH04/LAB0403/student/index.html">LAB 0403</a></td>
-                    </tr>
+            <h2>Chapter 04</h2>
+            <ul>
+                <li><a href="CH04/LAB0401/music/index.html">Lab 01</a></li>
+                <li><a href="CH04/LAB0402/rescue/index.html">Lab 02</a></li>
+                <li><a href="CH04/LAB0403/student/index.html">Lab 03</a></li>
+            </ul>
 
-                    <tr>
-                        <td>Chapter 05</td>
-                        <td class="left">Responsive Design: Design a website for mobile devices</td>
-                        <td>2026-03-11</td>
-                        <td><a href="CH05/LAB0501/music/index.html">LAB 0501</a></td>
-                        <td><a href="CH05/LAB0502/rescue/index.html">LAB 0502</a></td>
-                        <td><a href="CH05/LAB0503/student/index.html">LAB 0503</a></td>
-                    </tr>
+            <h2>Chapter 05</h2>
+            <ul>
+                <li><a href="CH05/LAB0501/music/index.html">Lab 01</a></li>
+                <li><a href="CH05/LAB0502/rescue/index.html">Lab 02</a></li>
+                <li><a href="CH05/LAB0503/student/index.html">Lab 03</a></li>
+            </ul>
 
-                    <tr>
-                        <td>Chapter 06</td>
-                        <td class="left">Responsive Design: Design a website for tablets and desktops</td>
-                        <td>2026-03-21</td>
-                        <td><a href="CH06/LAB0601/music/index.html">LAB 0601</a></td>
-                        <td><a href="CH06/LAB0602/rescue/index.html">LAB 0602</a></td>
-                        <td><a href="CH06/LAB0603/student/index.html">LAB 0603</a></td>
-                    </tr>
+            <h2>Chapter 06</h2>
+            <ul>
+                <li><a href="CH06/LAB0601/music/index.html">Lab 01</a></li>
+                <li><a href="CH06/LAB0602/rescue/index.html">Lab 02</a></li>
+                <li><a href="CH06/LAB0603/student/index.html">Lab 03</a></li>
+            </ul>
 
-                    <tr>
-                        <td>Chapter 07</td>
-                        <td class="left">Use new page layouts (semantic elements, grid layout)</td>
-                        <td>2026-04-06</td>
-                        <td><a href="CH07/LAB0701/music/index.html">LAB 0701</a></td>
-                        <td><a href="CH07/LAB0702/rescue/index.html">LAB 0702</a></td>
-                        <td><a href="CH07/LAB0703/student/index.html">LAB 0703</a></td>
-                    </tr>
+            <h2>Chapter 07</h2>
+            <ul>
+                <li><a href="CH07/LAB0701/music/index.html">Lab 01</a></li>
+                <li><a href="CH07/LAB0702/rescue/index.html">Lab 02</a></li>
+                <li><a href="CH07/LAB0703/student/index.html">Lab 03</a></li>
+            </ul>
 
-                    <tr>
-                        <td>Chapter 08</td>
-                        <td class="left">Create tables and forms</td>
-                        <td>2026-04-16</td>
-                        <td><a href="CH08/LAB0801/music/index.html">LAB 0801</a></td>
-                        <td><a href="CH08/LAB0802/rescue/index.html">LAB 0802</a></td>
-                        <td><a href="CH08/LAB0803/student/index.html">LAB 0803</a></td>
-                    </tr>
+            <h2>Chapter 08</h2>
+            <ul>
+                <li><a href="CH08/LAB0801/music/index.html">Lab 01</a></li>
+                <li><a href="CH08/LAB0802/rescue/index.html">Lab 02</a></li>
+                <li><a href="CH08/LAB0803/student/index.html">Lab 03</a></li>
+            </ul>
 
-                    <tr>
-                        <td>Chapter 09</td>
-                        <td class="left">Integrate audio and video</td>
-                        <td>2026-04-24</td>
-                        <td><a href="CH09/LAB0901/music/index.html">LAB 0901</a></td>
-                        <td><a href="CH09/LAB0902/rescue/index.html">LAB 0902</a></td>
-                        <td><a href="CH09/LAB0903/student/index.html">LAB 0903</a></td>
-                    </tr>
+            <h2>Chapter 09</h2>
+            <ul>
+                <li><a href="CH09/LAB0901/music/index.html">Lab 01</a></li>
+                <li><a href="CH09/LAB0902/rescue/index.html">Lab 02</a></li>
+                <li><a href="CH09/LAB0903/student/index.html">Lab 03</a></li>
+            </ul>
 
-                    <tr>
-                        <td>Chapter 10</td>
-                        <td class="left">Create interactivity with CSS and JavaScript</td>
-                        <td>2026-05-04</td>
-                        <td><a href="CH10/LAB1001/music/index.html">LAB 1001</a></td>
-                        <td><a href="CH10/LAB1002/rescue/index.html">LAB 1002</a></td>
-                        <td><a href="CH10/LAB1003/student/index.html">LAB 1003</a></td>
-                    </tr>
+            <h2>Chapter 10</h2>
+            <ul>
+                <li><a href="CH10/LAB1001/music/index.html">Lab 01</a></li>
+                <li><a href="CH10/LAB1002/rescue/index.html">Lab 02</a></li>
+                <li><a href="CH10/LAB1003/student/index.html">Lab 03</a></li>
+            </ul>
 
-                    <tr>
-                        <td>Chapter 11</td>
-                        <td class="left">Publish, Promote, and Maintain Website</td>
-                        <td>2026-05-07</td>
-                        <td><a href="CH11/LAB1101/music/index.html">LAB 1101</a></td>
-                        <td><a href="CH11/LAB1102/rescue/index.html">LAB 1102</a></td>
-                        <td><a href="CH11/LAB1103/student/index.html">LAB 1103</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>Chapter 12</td>
-                        <td class="left">Getting Started with Bootstrap</td>
-                        <td>In Work</td>
-                        <td><a href="CH12/LAB1201/music/index.html">LAB 1201</a></td>
-                        <td><a href="CH12/LAB1202/rescue/index.html">LAB 1202</a></td>
-                        <td><a href="CH12/LAB1203/student/index.html">LAB 1203</a></td>
-                    </tr>
-
-                </table>
-
-            </div>
+            <h2>Chapter 11</h2>
+            <ul>
+                <li><a href="CH11/LAB1101/music/index.html">Lab 01</a></li>
+                <li><a href="CH11/LAB1102/rescue/index.html">Lab 02</a></li>
+                <li><a href="CH11/LAB1103/student/index.html">Lab 03</a></li>
+            </ul>
 
 
         </div>
+
+        <!-- For tablets and desktops, display content as a table -->
+
+        <div class="tab-desk">
+
+
+            <table>
+
+
+                <tr>
+                    <th>Chapter</th>
+                    <th>Learning Objective</th>
+                    <th>Date Completed</th>
+                    <th>Lab 1</th>
+                    <th>Lab 2</th>
+                    <th>Lab 3</th>
+                </tr>
+
+                <tr>
+                    <td>Chapter 01</td>
+                    <td class="left">Create a basic webpage</td>
+                    <td>2026-02-02</td>
+                    <td><a href="CH01/LAB0101/plan.html">LAB 0101</a></td>
+                    <td><a href="CH01/LAB0102/rescuepages.html">LAB 0102</a></td>
+                    <td><a href="CH01/LAB0103/planning.pdf">LAB 0103</a></td>
+                </tr>
+
+                <tr>
+                    <td>Chapter 02</td>
+                    <td class="left">Build a webpage template</td>
+                    <td>2026-02-09</td>
+                    <td><a href="CH02/LAB0201/music/index.html">LAB 0201</a></td>
+                    <td><a href="CH02/LAB0202/rescue/index.html">LAB 0202</a></td>
+                    <td><a href="CH02/LAB0203/student/index.html">LAB 0203</a></td>
+                </tr>
+
+                <tr>
+                    <td>Chapter 03</td>
+                    <td class="left">Enhance a website with images and links</td>
+                    <td>2026-02-18</td>
+                    <td><a href="CH03/LAB0301/music/index.html">LAB 0301</a></td>
+                    <td><a href="CH03/LAB0302/rescue/index.html">LAB 0302</a></td>
+                    <td><a href="CH03/LAB0303/student/index.html">LAB 0303</a></td>
+                </tr>
+
+                <tr>
+                    <td>Chapter 04</td>
+                    <td class="left">Design a webpage with a CSS style sheet</td>
+                    <td>2026-02-24</td>
+                    <td><a href="CH04/LAB0401/music/index.html">LAB 0401</a></td>
+                    <td><a href="CH04/LAB0402/rescue/index.html">LAB 0402</a></td>
+                    <td><a href="CH04/LAB0403/student/index.html">LAB 0403</a></td>
+                </tr>
+
+                <tr>
+                    <td>Chapter 05</td>
+                    <td class="left">Responsive Design: Design a website for mobile devices</td>
+                    <td>2026-03-11</td>
+                    <td><a href="CH05/LAB0501/music/index.html">LAB 0501</a></td>
+                    <td><a href="CH05/LAB0502/rescue/index.html">LAB 0502</a></td>
+                    <td><a href="CH05/LAB0503/student/index.html">LAB 0503</a></td>
+                </tr>
+
+                <tr>
+                    <td>Chapter 06</td>
+                    <td class="left">Responsive Design: Design a website for tablets and desktops</td>
+                    <td>2026-03-21</td>
+                    <td><a href="CH06/LAB0601/music/index.html">LAB 0601</a></td>
+                    <td><a href="CH06/LAB0602/rescue/index.html">LAB 0602</a></td>
+                    <td><a href="CH06/LAB0603/student/index.html">LAB 0603</a></td>
+                </tr>
+
+                <tr>
+                    <td>Chapter 07</td>
+                    <td class="left">Use new page layouts (semantic elements, grid layout)</td>
+                    <td>2026-04-06</td>
+                    <td><a href="CH07/LAB0701/music/index.html">LAB 0701</a></td>
+                    <td><a href="CH07/LAB0702/rescue/index.html">LAB 0702</a></td>
+                    <td><a href="CH07/LAB0703/student/index.html">LAB 0703</a></td>
+                </tr>
+
+                <tr>
+                    <td>Chapter 08</td>
+                    <td class="left">Create tables and forms</td>
+                    <td>2026-04-16</td>
+                    <td><a href="CH08/LAB0801/music/index.html">LAB 0801</a></td>
+                    <td><a href="CH08/LAB0802/rescue/index.html">LAB 0802</a></td>
+                    <td><a href="CH08/LAB0803/student/index.html">LAB 0803</a></td>
+                </tr>
+
+                <tr>
+                    <td>Chapter 09</td>
+                    <td class="left">Integrate audio and video</td>
+                    <td>2026-04-24</td>
+                    <td><a href="CH09/LAB0901/music/index.html">LAB 0901</a></td>
+                    <td><a href="CH09/LAB0902/rescue/index.html">LAB 0902</a></td>
+                    <td><a href="CH09/LAB0903/student/index.html">LAB 0903</a></td>
+                </tr>
+
+                <tr>
+                    <td>Chapter 10</td>
+                    <td class="left">Create interactivity with CSS and JavaScript</td>
+                    <td>2026-05-04</td>
+                    <td><a href="CH10/LAB1001/music/index.html">LAB 1001</a></td>
+                    <td><a href="CH10/LAB1002/rescue/index.html">LAB 1002</a></td>
+                    <td><a href="CH10/LAB1003/student/index.html">LAB 1003</a></td>
+                </tr>
+
+                <tr>
+                    <td>Chapter 11</td>
+                    <td class="left">Publish, Promote, and Maintain Website</td>
+                    <td>2026-05-07</td>
+                    <td><a href="CH11/LAB1101/music/index.html">LAB 1101</a></td>
+                    <td><a href="CH11/LAB1102/rescue/index.html">LAB 1102</a></td>
+                    <td><a href="CH11/LAB1103/student/index.html">LAB 1103</a></td>
+                </tr>
+
+                <tr>
+                    <td>Chapter 12</td>
+                    <td class="left">Getting Started with Bootstrap</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+
 
     </main>
 

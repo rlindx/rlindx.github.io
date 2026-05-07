@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!--
+		Group members:  Rob Lindauer
+		Filename:  index.html
+		Date:  2026-05-06
+		Purpose:  Provide visitors with a scrollable list of student clubs and a calendar of student club events).		
+	-->
+
+<head>
+
+    <title>Clubs - Club Events | CCSU Student Clubs</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Provides a scrollable list of CCSU Student Clubs plus a calendar of CCSU Student Club events">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/bluedevil-favicon-32x32.png">
+
+</head>
+
+
+<body>
+
+    <!-- Skip to content link -->
+
+    <a class="skip" href="#content">Skip to Content</a>
+
+    <header>
+
+        <h1 class="centered">CCSU Student Clubs</h1>
+        <p class="centered">Make the Most of Your Life at CCSU!</p>
+
+    </header>
+
+    <!-- Mobile Nav -->
+
+    <nav class="mobile-nav">
+        <div id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="partnership.html">Partnership</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="faqs.html">FAQs</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <a class="nav-icon" onclick="hamburger()">
+            <div id="icon">&#9776;</div>
+        </a>
+    </nav>
+
+    <!-- Tablet / Desktop Nav -->
+
+    <nav class="tab-desk">
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="clubinfo.html">Student Clubs</a></li>
+            <li><a href="eventinfo.html">Event Calendar</a></li>
+            <li><a href="request.html">Add a Club or Event</a>
+                <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+
+    </nav>
+
+    <main id="content">
+
+        <!-- In order to save small-screen real estate, the hero image and aside displays only for larger viewports -->
+
+        <div id="hero" class="tab-desk">
+
+            <img class="centered" src="images/student-group-sitting.jpg" alt="group of students sitting against a wall">
+
+        </div>
+
+
+        <div id="welcome">
+
+            <h2 class="centered">Welcome to the CCSU Student Clubs Website!</h2>
+
+        </div>
+
+        <!-- Display a countdown-to-the-weekend message -->
+
+
+        <div id="weekend">
+
+            <p class="centered" id="enjoy" style="font-weight: bold;">Weekend message will go here
+                <p>
+
+        </div>
+
+        <script>
+            var today = new Date().getDay(); /* Sunday=0, Saturday=6 */
+            
+            				if (today == 0) {
+            
+            					document.getElementById("enjoy").innerText = "Happy Sunday!";
+            
+            				} else if (today == 5) {
+            					document.getElementById("enjoy").innerText = "The weekend is almost here!";
+            
+            				} else if (today == 6) {
+            
+            					document.getElementById("enjoy").innerText = "Happy Saturday!";
+            
+            				} else {
+            					var daysleft = (6 - today);
+            					var enjoymsg = "There are " + daysleft + " workdays till the weekend!";
+            
+            					document.getElementById("enjoy").innerText = enjoymsg;
+            				}
+        </script>
+
+
+
+        <!-- The main body of the page is a scrollable list of student clubs plus a calendar of club events - displayed either in a column on small viewports or as a two-column grid on larger viewports -->
+
+        <div id="clublist-and-calendar" class="grid">
+
+            <figure>
+
+                <img class="centered" src="images/clublist.jpg" alt="scrollable list of student clubs and organizations">
+
+            </figure>
+
+            <figure>
+
+                <img class="centered" src="images/calendar.jpg" alt="scrollable calendar of student events">
+
+            </figure>
+
+        </div>
+
+        <p>&nbsp;</p>
+        <br>
+
+        <div id="spotlight">
+
+            <h2 class="centered">Club Spotlight</h2>
+
+            <p>Each month we highlight selected student clubs and their activities. This month's spotlight is on the CCSU Scandinavian Club and on the CCSU Opera. Please check back next month to see more spotlighted clubs - and please feel free to contact
+                us if you'd like to promote your club to be in the spotlight.</p>
+
+            <div id="spotlight1">
+
+                <h3 class="centered">CCSU Scandinavian Club</h3>
+
+                <p>The Scandinavian Club is not just for people of Scandinavian heritage, but for all who are intrested in Scandinavian culture, food, music, and dance. In fact, we combine all three at our monthly Scandi dance event, which presents Scandi
+                    dance (e.g., polskas and schottisches) with live music, dance instruction, and a smorgasbord full of tempting snacks.</p>
+
+                <p>Here's Byss-Calle's "Gathering March." Our musicians play it at the start of each event to welcome our participants.</p>
+
+                <audio controls="controls" class="centered">
+                    <source src="media/Gathering-March.mp3" type="audio/mp3">
+                    <source src="media/Gathering-March.ogg" type="audio/ogg">
+                    <p>We're sorry, but your browser doesn't support audio playback</p>
+                </audio>
+
+            </div>
+
+            <div id="spotlight2" class="video-container">
+
+                <h3 class="centered">CCSU Opera</h3>
+
+                <p>The CCSU Opera presents one full opera per year, plus several concerts of opera selections. The club encourages musicians of all levels to join us.</p>
+
+                <p>Here is a selection from our April 1 concert of French baroque opera selections: Our orchestra and chorus perform "Forêts paisibles" from Rameau's 1735 opera "Les Indes Galantes." Prof. William Christie conducts with with seniors Sandrine
+                    Piau (soprano) and Lisandro Abadie (baritone) taking the solos.</p>
+
+                <video controls="controls" class="centered">
+                    <source src="media/Forêts-paisibles.mp4" type="video/mp4">
+                    <source src="media/Forêts-paisibles.webm" type="video/webm">
+                    <track src="media/captions.vtt" kind="captions" srclang="en" label="English">
+                        <track src="media/descriptions.vtt" kind="descriptions" srclang="en" label="English">
+                            <p>We're sorry, but your browser doesn't support video playback</p>
+                </video>
+
+            </div>
+
+            <p>&nbsp;</p>
+            <br>
+            <p>&nbsp;</p>
+            <br>
+
+        </div>
+
+        <!-- The following section is a footer-like dividion that follows the main content and preceeds the "real" footer.  It appears only on larger viewports and provides info on the student health benefits of club participation. students -->
+
+        <div id="benefits" class="tab-desk grid">
+
+            <figure id="studentplanning">
+
+                <img src="images/students-working-together.jpg" alt="students at club meeting">
+
+            </figure>
+
+            <!-- I couldn't make the following text work as an aside next to the photo, so I've used a grid structure to simulate how I'd want the aside to appear. -->
+
+            <figure>
+
+                <p><a href="https://www.ucop.edu/institutional-research-academic-planning/_files/extra-curricular-participation-and-student-success.pdf">Studies</a> show that participating in student activities is positively related to higher student satisfaction,
+                    higher GPAs, and higher course completion rates.</p>
+
+            </figure>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <div class="copyright">
+
+            <p>&copy; Copyright 2026, All Rights Reserved.</p>
+            <p class="tel-link"><a href="tel:8605551212">(860)&nbsp;555-1212</a></p>
+            <p><a class="email-link" href="mailto:studentclubs@ccsu.edu">studentclubs@ccsu.edu</a></p>
+            <!-- Display CCSU link, but include the logo graphic only on larger viewports -->
+            <p class="tab-desk">
+                <a href="http://www.ccsu.edu"><img class="centered" src="images/ccsu-logo.png" alt="CCSU Logo"></a>
+            </p>
+            <p class="mobile"><a href="http://www.ccsu.edu">www.ccsu.edu</a>
+
+        </div>
+
+        <div class="social">
+
+            <a href="http://www.facebook.com"><img src="images/facebook-logo.png" alt="Facebook logo"></a>
+            <a href="http://www.twitter.com"><img src="images/twitter-logo.png" alt="Twitter logo"></a>
+
+        </div>
+
+    </footer>
+
+    <script src="scripts/script.js"></script>
+
+</body>
+
+</html>

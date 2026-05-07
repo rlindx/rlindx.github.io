@@ -1,0 +1,5 @@
+http://www.exampledomain.com/index.html
+http://www.exampledomaincom/clubinfo.html
+http://www.exampledomain.com/contact.html
+http://www.exampledomain.com/eventinfo.html
+http://www.exampledomain.com/request.html

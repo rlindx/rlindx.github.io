@@ -33,16 +33,29 @@
 
     <main>
 	
-		<!-- This section displays a digital clock, Rob's profile photo, and a "time left" message.  These items display in a column on the mobile viewport, and as a grid on the tablet and desktop viewports. -->
+		<!-- This section displays today's date and current time, Rob's profile photo, and a "time left" message.  These items display in a column on the mobile viewport, and as a grid on the tablet and desktop viewports. -->
 
         <div class="grid">
 
-            <!-- Part 1:  a digital clock -->
-            <figure id="clock">00:00:00</figure>
-
-            <script>
-                // Function to update the clock every second
+            <!-- Figure 1:  today's date plus a digital clock -->
+            
+			<figure id="datetime" style="border: 2px solid green; padding: 10px; display: block;">
 				
+				<p id="DateID" class="centered" style="font-size: 2em;">00:00:00</p>
+			
+				<script> // Script to determine today's date
+				
+					var date = new Date();
+					var realMonth = date.getMonth() + 1;
+					var dateText = (realMonth + "/" + date.getDate() + "/" + date.getFullYear() );
+					document.getElementById("DateID").innerHTML = dateText;
+				
+				</script>
+			
+				<p id="clock" class="centered" style="font-size: 2em;">00:00:00</p>
+
+				<script> // Script to determine current time, updating the clock every second
+            				
 					function updateClock() {
 						const now = new Date();
 				
@@ -68,10 +81,12 @@
 					
 					setInterval(updateClock, 1000);
 					
-            </script>
+				</script>
+			
+			</figure>
 
-
-            <!-- Part 2:  Rob's photo -->
+            <!-- Figure 2:  Rob's photo -->
+			
             <figure id="headshot">
 
                 <img class="centered" src="images/RL_Headshot.jpg" alt="Rob Lindauer profile picture">
@@ -79,7 +94,8 @@
             </figure>
 
 
-            <!-- Part 3:  Countdown to assignment due date -->
+            <!-- Figure 3:  Countdown to assignment due date -->
+			
             <figure id="tempusfugit">
 
                 <p class="centered" style="font-size: 2em;">Tempus Fugit</p>
@@ -91,25 +107,29 @@
                 <script>
 				
                     // Hard-code the due date
-					const targetDate = new Date("2026-05-13");
+					var targetDate = new Date("2026-05-13");
 					
 					// Determine today's date
-					const today = new Date();
+					var today = new Date();
 					
 					// Remove time portion for accurate day calculation
 					today.setHours(0, 0, 0, 0);
 					targetDate.setHours(0, 0, 0, 0);
 					
 					// Deterine the difference in milliseconds between the two dates
-					const diffMs = targetDate - today;
+					var diffMs = targetDate - today;
 					
 					// Convert the difference from milliseconds to days
-					const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+					var diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 					
-					if (diffDays > 0) {
-						var timemsg = "We have only " + diffDays + " days left to finish the assigments.";                    
-					} else if (diffDays == 0) {
+					if (diffDays == 0) {
 						var timemsg = "Today is the drop-dead date to submit the assignments";
+
+					} else if (diffDays == 1) {
+						var timemsg = "We have just one more day to finish the assignments";
+						
+					} else if (diffDays > 1) {
+						var timemsg = "We have only " + diffDays + " days left to finish the assigments";
 								
 					} else {
 						var timemsg = "The due date has passed.  It's time to throw ourselves on the mercy of the Professor.";
